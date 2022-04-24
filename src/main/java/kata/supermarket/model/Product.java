@@ -2,6 +2,7 @@ package kata.supermarket.model;
 
 import kata.supermarket.pricing.Offers;
 
+//Holds common features shared by all types of products
 public abstract class Product {
 
     private final String productId;
