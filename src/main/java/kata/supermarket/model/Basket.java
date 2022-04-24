@@ -33,7 +33,7 @@ public class Basket {
         }
 
         private BigDecimal subtotal() {
-            return items.stream().map(Item::price)
+            return items.stream().map(Item::getPrice)
                     .reduce(BigDecimal::add)
                     .orElse(BigDecimal.ZERO)
                     .setScale(2, RoundingMode.HALF_UP);

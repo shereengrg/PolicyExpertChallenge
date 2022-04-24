@@ -1,20 +1,26 @@
 package kata.supermarket.model;
 
-import java.math.BigDecimal;
+import kata.supermarket.pricing.Offers;
 
-public class Product {
+public abstract class Product {
 
-    private final BigDecimal pricePerUnit;
+    private final String productId;
+    private Offers offer;
 
-    public Product(final BigDecimal pricePerUnit) {
-        this.pricePerUnit = pricePerUnit;
+    public Product(String productId){
+        this.productId = productId;
     }
 
-    BigDecimal pricePerUnit() {
-        return pricePerUnit;
+    public Product(String productId, Offers offer){
+        this.productId = productId;
+        this.offer = offer;
     }
 
-    public Item oneOf() {
-        return new ItemByUnit(this);
+    String getProductId(){
+        return productId;
+    }
+
+    Offers getProductOffer(){
+        return offer;
     }
 }
