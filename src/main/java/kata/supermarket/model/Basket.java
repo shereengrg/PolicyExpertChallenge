@@ -1,5 +1,7 @@
 package kata.supermarket.model;
 
+import kata.supermarket.pricing.OfferCalculator;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
@@ -23,6 +25,11 @@ public class Basket {
 
     public BigDecimal total() {
         return new TotalCalculator().calculate();
+    }
+
+    //Apply offer price on items in basket
+    public void calculateOffer(){
+        new OfferCalculator().calculateOffer(items);
     }
 
     private class TotalCalculator {
